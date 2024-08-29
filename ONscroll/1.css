@@ -1,0 +1,34 @@
+body,html{
+    height:100%;
+    width:100%;
+    overflow: none;
+    padding:0;
+    margin:0;
+}
+.page-1, .page-3{
+    background-color: lightblue;
+    height: 100%;
+    width:100%;
+    display: flex;
+    /* position:fixed; */
+    justify-content: center;
+    align-items: center;
+}
+.page-2,.page-4{
+    background-color: lightpink;
+    height:100%;
+    width:100%;
+    display: flex;
+    /* position:fixed; */
+    justify-content: center;
+    align-items: center;
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-start:200px;
+    animation-range-end: 500px;
+
+}
+@keyframes fade-in {
+    from{ scale:0.5; opacity:0;}
+    to { scale : 1; opacity:1;}
+}

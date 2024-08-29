@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+@keyframes colorChange{
+    0%{
+        background: red;
+        top:0px;
+        left:0px;
+    }
+    25%{
+        background: yellow;
+        top:0px;
+        left:300px;
+    }
+    50%{
+        background: green;
+        top:300px;
+        left:300px;
+    }
+    75%{
+        background: blueviolet;
+        top:300px;
+        left:0px;
+    }
+    100%{
+        background: blue;
+        top:0px;
+        left:0px;
+    }
+}
+.body{
+    scroll-behavior: smooth;
+}
+
+.main{
+width:100px;
+height:100px;
+position:relative;             /* liner  -same speed at the end and the start*/
+position:relative;             /* ease-in    -slow start*/
+position:relative;             /* ease-out   -slow end*/
+                                            
+background: red;
+/* animation-name: colorChange;
+animation-duration: 5s;
+animation-delay:3s;
+animation-iteration-count: infinite; */
+animation: colorChange 5s 0s infinite linear; 
+/* (animation name, duration of animation,delay of animation,no. of times for animation to work,speed) */
+}
+@keyframes truckmove{
+    0%{
+        left:-200px;
+        bottom:0;
+    }
+
+    100%{
+        left:1200px;
+        bottom:0;
+    }
+}
+.truck{
+    bottom:0px;
+    left:-200px;
+    position: fixed;
+    animation: truckmove 5s 0s infinite linear;
+    width:0;
+}
+
+ @keyframes cardRotate{
+    0%{
+        background:red;
+        transform: rotateY(0deg);
+    }
+    25%{
+        transform:rotateY(90deg);
+
+    }
+    50%{
+        transform:rotateY(180deg);
+        background:blue;
+    }
+    75%{
+        transform:rotateY(270deg);
+
+    }
+    100%{
+        transform:rotateY(360deg);
+
+    }
+}
+
+.card{
+    width:100px;
+    position:absolute;
+    right:0;
+    z-index:100;
+    /* transform:rotateY('90deg') */
+    height:100px;
+    background: red;
+}
+.card-hover{
+    width:100px;
+    height:100px;
+    position:absolute;
+    right:0;
+    z-index:101;
+
+}
+
+@keyframes floatButton{
+    0%{
+        top:220px;
+    }
+    16.6%{
+        top:230px;
+    }
+    33.2%{
+        top:222px;
+    }
+    49.8%{
+        top:228px;
+    }
+
+    66.4%{
+        top:222px;
+    }
+    83%{
+        top:230px;
+    }
+    100%{
+        top:220px;
+    }
+
+}
+
+.Float{
+
+    background-color:aqua;
+    position:relative;
+    padding:10px;
+    top:200px;
+    border:0;
+    border-radius:20px;
+    animation: floatButton 6s 0s infinite ease-in-out;
+
+}
+
+.card-hover:active .card{
+    animation: cardRotate 4s 0s 1 linear;
+}
+</style>
+</head>
+<body>
+    <div class="main">
+    </div>
+
+    <div class="truck">
+        <img src="truck-body.png" style="width:80px;" alt="">
+        <img src="alloy-wheel-car-tire-car-wheel-png.jpg" style="width:20px; display: flex; " alt="">
+    </div>
+
+
+    <div class="card-hover">
+        <div class="card">
+
+        </div>
+    </div>
+
+    <span style="margin-left:500px;">
+        <button class="Float" style=""> Floating Button </button>
+    </span>
+
+</body>
+</html>

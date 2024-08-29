@@ -1,0 +1,74 @@
+*{
+    overflow: hidden;
+}
+html,body{
+    height:100%;
+    width:100%;
+}
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width:100%;
+}
+.child{
+    background-color: crimson;
+    height:200px;
+    width:400px;
+    border-radius:20px;
+    border:0;
+    transition: height 0.2s,
+                width 0.2s,
+                visibility 0.5s
+                ;
+
+}
+.coke{
+    margin-top:60px;
+  position: fixed;
+  transition: height 0.2s,
+                width 0.2s;
+    transition-delay: 0.2s;
+   
+}
+.can{
+    visibility: hidden;
+    width: 50%;
+    height:100%;
+    padding-top: 8px;
+    transition: height 0.2s,
+                width 0.2s;
+}
+
+.child:hover{
+    .can{
+        visibility: visible;
+        margin:0;
+        width:60%;
+        left:0;
+    }
+    .coke{
+        visibility: hidden;
+        margin-top:0;
+        position: absolute;
+
+    }
+    height:400px;
+    width: 600px;
+}
+.child:hover>.coke{
+    animation: canShow 5s 0s infinite linear; 
+}
+
+@keyframes showCan{
+    0%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: visible;   
+    }
+    100%{
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,34 @@
+*{
+    overflow: hidden;
+}
+html,body{
+    height:100%;
+    width:100%;
+}
+
+.container{
+    display: flex;
+    width:100%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+}
+.preview{
+    visibility: hidden;
+}
+.can{
+    z-index:5;
+    transition: width 0.2s,
+    height 0.2s;
+    object-fit: cover;
+}
+
+.can:hover .preview{
+        visibility: visible;
+        background-color: crimson;
+        width:200px;
+        height:200px;
+        border-radius:20px;
+        border:0;
+}
